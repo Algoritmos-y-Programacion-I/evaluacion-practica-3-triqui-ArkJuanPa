@@ -69,10 +69,52 @@ public class Executable {
     }
 
     private void jugadaHumano() {
-        // Implementación de jugada de humano
+
+        System.out.println("ingrese en que columna desea realizar su jugada.(1,2 o 3)");
+        int cL = reader.nextInt();
+        int columna = 0;
+        int fila = 0;
+        switch (cL) {
+            case 1:
+                columna = 0;
+                break;
+            case 2:
+                columna = 1;
+                break;
+            case 3:
+                columna = 2;
+                break;
+
+            default:
+                System.out.print("Por favor ingrese una opcion valida");
+        }
+
+        System.out.println("ingrese en que fila desea realizar su jugada.(1,2 o 3)");
+        int fL = reader.nextInt();
+        switch (fL) {
+            case 1:
+                fila = 0;
+                break;
+            case 2:
+                fila = 1;
+                break;
+            case 3:
+                fila = 2;
+                break;
+
+            default:
+                System.out.print("Por favor ingrese una opcion valida");
+
+        }
+
+        System.out.println(cont.jugadaHumano(columna, fila));
+        System.out.println("El humano ha realizado su jugada.");
+        imprimirTablero();
     }
 
     private void validarGanador() {
-        // Implementación de la validación si alguien ya ganó el triqui
+        System.out.println("\nEl jugador humano es: " + "'O'");
+        System.out.println("La maquina es: " + "'X'\n");
+        System.out.println(cont.validarGanador());
     }
 }
